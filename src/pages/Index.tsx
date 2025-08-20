@@ -7,6 +7,7 @@ import { AnalyticsCharts } from "@/components/Analytics/AnalyticsCharts";
 import { ContactManager } from "@/components/Contacts/ContactManager";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { BSPSetupModal } from "@/components/Settings/BSPSetupModal";
 import { Link2 } from "lucide-react";
 
 const Index = () => {
@@ -33,10 +34,18 @@ const Index = () => {
                 To enable full functionality including authentication, database management, 
                 and WhatsApp BSP integration, connect your project to Supabase.
               </p>
-              <Button className="gap-2">
-                <Link2 className="w-4 h-4" />
-                Connect to Supabase
-              </Button>
+              <div className="flex gap-3">
+                <BSPSetupModal>
+                  <Button variant="outline" className="gap-2">
+                    <Link2 className="w-4 h-4" />
+                    Setup WhatsApp BSP
+                  </Button>
+                </BSPSetupModal>
+                <Button className="gap-2">
+                  <Link2 className="w-4 h-4" />
+                  Connect to Supabase
+                </Button>
+              </div>
             </CardContent>
           </Card>
         );

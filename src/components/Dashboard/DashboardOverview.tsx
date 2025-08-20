@@ -2,6 +2,7 @@ import { StatsCard } from "./StatsCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { CreateCampaignModal } from "@/components/Campaigns/CreateCampaignModal";
 import { 
   MessageSquare, 
   Users, 
@@ -137,15 +138,17 @@ export function DashboardOverview() {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="shadow-[var(--shadow-card)] hover:shadow-lg transition-shadow cursor-pointer">
-          <CardContent className="p-6 text-center">
-            <div className="p-4 bg-primary/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <PlayCircle className="w-8 h-8 text-primary" />
-            </div>
-            <h3 className="font-semibold text-foreground mb-2">Start New Campaign</h3>
-            <p className="text-sm text-muted-foreground">Create and launch your next WhatsApp marketing campaign</p>
-          </CardContent>
-        </Card>
+        <CreateCampaignModal>
+          <Card className="shadow-[var(--shadow-card)] hover:shadow-lg transition-shadow cursor-pointer">
+            <CardContent className="p-6 text-center">
+              <div className="p-4 bg-primary/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <PlayCircle className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-2">Start New Campaign</h3>
+              <p className="text-sm text-muted-foreground">Create and launch your next WhatsApp marketing campaign</p>
+            </CardContent>
+          </Card>
+        </CreateCampaignModal>
 
         <Card className="shadow-[var(--shadow-card)] hover:shadow-lg transition-shadow cursor-pointer">
           <CardContent className="p-6 text-center">

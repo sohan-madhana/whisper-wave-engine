@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { CreateCampaignModal } from "./CreateCampaignModal";
 import { 
   MessageSquare, 
   Users, 
@@ -10,7 +11,8 @@ import {
   Archive,
   Edit,
   Eye,
-  TrendingUp
+  TrendingUp,
+  Plus
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -91,6 +93,16 @@ export function CampaignList() {
 
   return (
     <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h2 className="text-2xl font-bold">Campaigns</h2>
+        <CreateCampaignModal>
+          <Button>
+            <Plus className="w-4 h-4 mr-2" />
+            New Campaign
+          </Button>
+        </CreateCampaignModal>
+      </div>
+      
       <div className="grid gap-6">
         {mockCampaigns.map((campaign) => (
           <Card key={campaign.id} className="shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-200">

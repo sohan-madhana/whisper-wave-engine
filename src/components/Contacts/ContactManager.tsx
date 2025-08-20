@@ -2,6 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { AddContactModal } from "./AddContactModal";
+import { CreateAudienceModal } from "@/components/Audiences/CreateAudienceModal";
 import { 
   Search,
   Upload,
@@ -85,10 +87,12 @@ export function ContactManager() {
             <Upload className="w-4 h-4 mr-2" />
             Import CSV
           </Button>
-          <Button>
-            <UserPlus className="w-4 h-4 mr-2" />
-            Add Contact
-          </Button>
+          <AddContactModal>
+            <Button>
+              <UserPlus className="w-4 h-4 mr-2" />
+              Add Contact
+            </Button>
+          </AddContactModal>
         </div>
       </div>
 
@@ -186,10 +190,18 @@ export function ContactManager() {
       {/* Target Audiences */}
       <Card className="shadow-[var(--shadow-card)]">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Users className="w-5 h-5" />
-            Target Audiences
-          </CardTitle>
+          <div className="flex items-center justify-between">
+            <CardTitle className="flex items-center gap-2">
+              <Users className="w-5 h-5" />
+              Target Audiences
+            </CardTitle>
+            <CreateAudienceModal>
+              <Button size="sm">
+                <Users className="w-4 h-4 mr-2" />
+                New Audience
+              </Button>
+            </CreateAudienceModal>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
