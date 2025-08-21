@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Bell, Search, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { UserMenu } from "./UserMenu";
 
 interface HeaderProps {
   activeSection: string;
@@ -51,11 +51,7 @@ export function Header({ activeSection, onNewCampaign }: HeaderProps) {
             <Bell className="w-5 h-5" />
           </Button>
 
-          <Avatar>
-            <AvatarFallback className="bg-primary text-primary-foreground">
-              KF
-            </AvatarFallback>
-          </Avatar>
+          <UserMenu />
         </div>
       </div>
     </header>
