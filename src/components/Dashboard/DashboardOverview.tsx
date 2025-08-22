@@ -14,7 +14,11 @@ import {
   CheckCircle
 } from "lucide-react";
 
-export function DashboardOverview() {
+interface DashboardOverviewProps {
+  onSectionChange?: (section: string) => void;
+}
+
+export function DashboardOverview({ onSectionChange }: DashboardOverviewProps = {}) {
   const recentCampaigns = [
     {
       id: 1,
@@ -150,7 +154,10 @@ export function DashboardOverview() {
           </Card>
         </CreateCampaignModal>
 
-        <Card className="shadow-[var(--shadow-card)] hover:shadow-lg transition-shadow cursor-pointer">
+        <Card 
+          className="shadow-[var(--shadow-card)] hover:shadow-lg transition-shadow cursor-pointer"
+          onClick={() => onSectionChange?.("contacts")}
+        >
           <CardContent className="p-6 text-center">
             <div className="p-4 bg-primary/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
               <Users className="w-8 h-8 text-primary" />
@@ -160,7 +167,10 @@ export function DashboardOverview() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-[var(--shadow-card)] hover:shadow-lg transition-shadow cursor-pointer">
+        <Card 
+          className="shadow-[var(--shadow-card)] hover:shadow-lg transition-shadow cursor-pointer"
+          onClick={() => onSectionChange?.("analytics")}
+        >
           <CardContent className="p-6 text-center">
             <div className="p-4 bg-primary/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
               <TrendingUp className="w-8 h-8 text-primary" />
